@@ -20,6 +20,17 @@ nav a{
   color: #fff;
 }
 
+#editPizza{
+  color: #fff;
+}
+
+.editForm {
+  display: flex;
+  flex-direction: column;
+  padding: 3rem;
+  background: #052826
+}
+
 #pizzaMenu{
   display: flex;
   flex-wrap: wrap;

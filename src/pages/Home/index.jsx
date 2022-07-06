@@ -3,8 +3,8 @@ import {Link} from 'react-router-dom';
 import Api from '../../Api';
 import { CartContext } from '../../context/cartContext'
 
-const HomePage = () => {
-  const { setPizzaProducts, pizzaProducts, addToCart, cartItems } = useContext(CartContext)
+const HomePage = (props) => {
+  const { setPizzaProducts, pizzaProducts, cartItems } = useContext(CartContext)
   console.log(cartItems);
   const [search, setSearch] = useState('');
   const [page, setPage] = useState(1);
@@ -67,6 +67,13 @@ const HomePage = () => {
             <Link to={pizza.name}>
             <button>Buy Pizza</button>
             </Link>
+            {
+              props.admin ? 
+                <Link to={`/edit/${pizza._id}`}>
+                <button>Edit Pizza</button>
+                </Link>
+                : ''
+            }
           </div>
         ))}
       </div>
